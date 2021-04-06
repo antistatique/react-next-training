@@ -14,9 +14,10 @@ Créer un composant React permettant de récupérer et de lister des vaisseaux *
 
 ## 🗜️ Contraintes
 
-- N'utiliser que React, react-dom et axios comme dépendances
+- N'utiliser que React et react-dom comme dépendances (module NPM)
 - Toutes les *props* sont correctement typées
 - Respecter les bonnes pratiques d'accessibilité et d'expérience utilisateur
+- Respecter les bonnes pratiques JavaScript/TypeScript sans linter
 
 ## 🚀 Librable
 
