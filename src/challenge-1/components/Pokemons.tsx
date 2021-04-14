@@ -21,6 +21,7 @@ const Pokemons  = () => {
   // Affichage de la liste avec une boucle
   return (
     <div>
+      <p>Mon pokemon favoris: {favorite}</p>
       <table className="table-auto">
         <thead>
           <tr>
@@ -36,21 +37,7 @@ const Pokemons  = () => {
           }
         </tbody>
       </table>
-      <button 
-        type="button" 
-        aria-label="previous page" 
-        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
-      >
-        Prev
-      </button>
-      <button 
-        type="button" 
-        aria-label="next page" 
-        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
-      >
-        Next
-      </button>
-      <p>Mon pokemon favoris: {favorite}</p>
+      
     </div>
   );
 };
