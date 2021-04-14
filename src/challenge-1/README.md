@@ -19,7 +19,7 @@ Créer un composant React permettant de récupérer et de lister des vaisseaux *
 - Respecter les bonnes pratiques d'accessibilité et d'expérience utilisateur
 - Respecter les bonnes pratiques JavaScript/TypeScript sans linter
 
-## 🚀 Librable
+## 🚀 Livrable
 
 - *Pull request* vers `main`
 
