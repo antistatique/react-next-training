@@ -28,12 +28,14 @@ const Pokemons  = ({setFavorite}: PokemonsProps) => {
   return (
     <div>
       <div className="flex justify-end text-white mb-8">
-        <button onClick={()=> setOffset(offset - 20)} className="p-2 flex items-center rounded-md bg-indigo-700">
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-          </svg>
-          Previous
-        </button>
+        { offset > 0 &&
+          <button onClick={()=> setOffset(offset - 20)} className="p-2 flex items-center rounded-md bg-indigo-700">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+            </svg>
+            Previous
+          </button>
+        }
         <button onClick={()=> setOffset(offset + 20)} className="p-2 ml-4 flex rounded-md items-center bg-indigo-700"> 
           Next
           <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
