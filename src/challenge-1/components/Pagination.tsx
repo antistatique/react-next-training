@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 export type PaginationProps = {
   totalPages: number;
@@ -8,7 +8,17 @@ export type PaginationProps = {
 }
 
 const Pagination = ({ children}: PaginationProps) => {
-  
+
+  const [nextPage, setNextPage] = useState('');
+
+  console.log(nextPage)
+
+  useEffect(() => {
+    fetch('https://pokeapi.co/api/v2/pokemon/')
+        .then(response => response.json())
+        .then(data => setNextPage(data.next));
+  }, []);
+
 
   return (
     <div>
@@ -21,13 +31,14 @@ const Pagination = ({ children}: PaginationProps) => {
         Prev
       </button>
       <p>1 - 2 - 3</p>
-      <button 
+      <a
+      href={nextPage}
         type="button" 
         aria-label="next page" 
         className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
       >
         Next
-      </button>
+      </a>
     </div>
   );
 };

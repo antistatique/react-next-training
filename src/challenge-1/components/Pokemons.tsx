@@ -6,17 +6,24 @@ const Pokemons  = () => {
 
   // Create a array of data
   const [allPokemons, setAllPokemons] = useState<Array<PokemonCardProps>>();
+  const [offset, setOffset] = useState(0);
+
+  console.log(offset)
 
   //Fetching Data
+  let url = "https://pokeapi.co/api/v2/pokemon/?offset=" + offset + "&limit=20";
+
+  console.log(url)
+
+
   useEffect(() => {
-    fetch('https://pokeapi.co/api/v2/pokemon/')
+    fetch(url)
         .then(response => response.json())
         .then(data => setAllPokemons(data.results));
-  }, []);
+  }, [offset]);
 
   // Favorite
   const [favorite, setFavorite] = useState('aucun favori');
-
 
   // Affichage de la liste avec une boucle
   return (
@@ -32,12 +39,13 @@ const Pokemons  = () => {
         <tbody>
           { allPokemons && 
               allPokemons.map( (item, index) => 
-                <PokemonCard key="pokemon-index" name={item.name} setFavorite={setFavorite}/>
+                <PokemonCard key={`pokemon-${index}`} name={item.name} setFavorite={setFavorite}/>
               )
           }
         </tbody>
       </table>
-      
+      <button onClick={()=> setOffset(offset + 20)}>Next</button>
+      <button onClick={()=> setOffset(offset - 20)}>previous</button>
     </div>
   );
 };
