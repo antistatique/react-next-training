@@ -4,7 +4,7 @@
 
 1. Gérer un formulaire en React
 2. Utiliser une librairie React
-1. Comprendre [React Hook Form](https://react-hook-form.com/)
+3. Comprendre [React Hook Form](https://react-hook-form.com/)
 
 ## 📋 Consignes
 
