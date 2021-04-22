@@ -1,9 +1,5 @@
-import React, { useEffect, useState } from 'react';
-
-export type PokemonsProps = {
-  setFavorite: (name: string) => void;
-  favorite: string;
-};
+import React, { useContext, useEffect, useState } from "react";
+import { FavoriteContext } from "../App";
 
 export type PokemonsResponse = {
   previous: string | null;
@@ -14,9 +10,9 @@ export type PokemonsResponse = {
   }[];
 };
 
-const url = 'https://pokeapi.co/api/v2/pokemon/';
+const url = "https://pokeapi.co/api/v2/pokemon/";
 
-const Pokemons = ({ setFavorite, favorite }: PokemonsProps): JSX.Element => {
+const Pokemons = (): JSX.Element => {
   // Create a array of data
   const [allPokemons, setAllPokemons] = useState<PokemonsResponse | null>(null);
 
@@ -26,13 +22,14 @@ const Pokemons = ({ setFavorite, favorite }: PokemonsProps): JSX.Element => {
       .then(setAllPokemons);
   }, []);
 
-  const handleRefreshPokemons = (newUrl: string | null ) => {
-    if (newUrl !== null){ 
-      fetch(newUrl)
-        .then((response) => response.json())
-        .then(setAllPokemons);
-    }
+  const handleRefreshPokemons = (newUrl) => {
+    fetch(newUrl)
+      .then((response) => response.json())
+      .then(setAllPokemons);
   };
+
+  // utilisation du context qui passe va prendre les "props" déclarée plus haut
+  const { favorite, setFavorite } = useContext(FavoriteContext);
 
   if (allPokemons === null) return <p>No pokemons</p>;
 
@@ -53,9 +50,9 @@ const Pokemons = ({ setFavorite, favorite }: PokemonsProps): JSX.Element => {
               stroke="currentColor"
             >
               <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
                 d="M15 19l-7-7 7-7"
               />
             </svg>
@@ -76,9 +73,9 @@ const Pokemons = ({ setFavorite, favorite }: PokemonsProps): JSX.Element => {
               stroke="currentColor"
             >
               <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
                 d="M9 5l7 7-7 7"
               />
             </svg>
@@ -88,10 +85,10 @@ const Pokemons = ({ setFavorite, favorite }: PokemonsProps): JSX.Element => {
       <div className="grid grid-cols-6 gap-4">
         {allPokemons &&
           allPokemons.results.map((item) => (
-            <div className="border p-6 rounded-xl">
+            <div className="border p-6 rounded-xl" key={item.name}>
               <img
                 src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${item.url
-                  .split('/')
+                  .split("/")
                   .filter((i) => i.length > 0)
                   .slice(-1)}.png`}
                 alt="pokemon random"
