@@ -2481,13 +2481,6 @@ axe-core@^4.0.2:
   resolved "https://registry.yarnpkg.com/axe-core/-/axe-core-4.1.4.tgz#f19cd99a84ee32a318b9c5b5bb8ed373ad94f143"
   integrity sha512-Pdgfv6iP0gNx9ejRGa3zE7Xgkj/iclXqLfe7BnatdZz0QnLZ3jrRHUVH8wNSdN68w05Sk3ShGTb3ydktMTooig==
 
-axios@^0.21.1:
-  version "0.21.1"
-  resolved "https://registry.yarnpkg.com/axios/-/axios-0.21.1.tgz#22563481962f4d6bde9a76d516ef0e5d3c09b2b8"
-  integrity sha512-dKQiRHxGD9PPRIUNIWvZhPTPpl1rf/OxTYKsqKUDjBwYylTvV7SjSHJb9ratfyzM6wCdLCOYLzs73qpg5c4iGA==
-  dependencies:
-    follow-redirects "^1.10.0"
-
 axobject-query@^2.2.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/axobject-query/-/axobject-query-2.2.0.tgz#943d47e10c0b704aa42275e20edf3722648989be"
@@ -4968,7 +4961,7 @@ flush-write-stream@^1.0.0:
     inherits "^2.0.3"
     readable-stream "^2.3.6"
 
-follow-redirects@^1.0.0, follow-redirects@^1.10.0:
+follow-redirects@^1.0.0:
   version "1.13.3"
   resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.13.3.tgz#e5598ad50174c1bc4e872301e82ac2cd97f90267"
   integrity sha512-DUgl6+HDzB0iEptNQEXLx/KhTmDb8tZUHSeLqpnjpknR70H0nC2t9N73BK6fN4hOvJ84pKlIQVQ4k5FFlBedKA==
@@ -8756,7 +8749,7 @@ prompts@^2.0.1:
     kleur "^3.0.3"
     sisteransi "^1.0.5"
 
-prop-types@^15.6.1, prop-types@^15.7.2:
+prop-types@^15.7.2:
   version "15.7.2"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.7.2.tgz#52c41e75b8c87e72b9d9360e0206b99dcbffa6c5"
   integrity sha512-8QQikdH7//R2vurIJSutZ1smHYTcLpRWEOlHnzcWHmBYrOGUysKwSsrC89BCiFj3CbrfJ/nXFdJepOVrY1GCHQ==
@@ -8976,6 +8969,11 @@ react-error-overlay@^6.0.9:
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-6.0.9.tgz#3c743010c9359608c375ecd6bc76f35d93995b0a"
   integrity sha512-nQTTcUu+ATDbrSD1BZHr5kgSD4oF8OFjxun8uAaL8RwPBacGBNPf/yAuVVdx17N8XNzRDMrZ9XcKZHCjPW+9ew==
 
+react-hook-form@^7.2.3:
+  version "7.2.3"
+  resolved "https://registry.yarnpkg.com/react-hook-form/-/react-hook-form-7.2.3.tgz#a4be9214cab3a6e6358f95d342da2e7ded37e3f0"
+  integrity sha512-ki83pkQH/NK6HbSWb4zHLD78s8nh6OW2j4GC5kAjhB2C3yiiVGvNAvybgAfnsXBbx+xb9mPgSpRRVOQUbss+JQ==
+
 react-is@^16.8.1:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
@@ -8985,13 +8983,6 @@ react-is@^17.0.1:
   version "17.0.2"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-17.0.2.tgz#e691d4a8e9c789365655539ab372762b0efb54f0"
   integrity sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w==
-
-react-paginate@^7.1.2:
-  version "7.1.2"
-  resolved "https://registry.yarnpkg.com/react-paginate/-/react-paginate-7.1.2.tgz#3a94f36a774f9d2e82b877e30474a16088b00a4d"
-  integrity sha512-yAl7taPNIUegS5b6kdNvEMh7iu9T3spuzOCUw+BB0ScTLaC4dfSl686Kl+rVCvkOr67qcbi6T8+tpo4hEVCC1Q==
-  dependencies:
-    prop-types "^15.6.1"
 
 react-refresh@^0.8.3:
   version "0.8.3"
