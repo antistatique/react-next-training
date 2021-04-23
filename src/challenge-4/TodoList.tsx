@@ -15,7 +15,7 @@ const ToDoList = () :JSX.Element => {
   // Ajouter la value à notre state task
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     setTask(event.target.value);
-  }
+  };
 
   // Va ajouter au tableau une nouvelle tâche
   const addTask = () => {
@@ -24,7 +24,14 @@ const ToDoList = () :JSX.Element => {
     //Clear l'input après avoir appuyer sur le bouton
     setTask('');
     console.log(toDoList)
-  }
+  };
+
+  // On va comparer avec les taches si elles sont à delete ou pas
+  const completeTask = (taskToDelete:string) => {
+    setToDoList(toDoList.filter( (task) => {
+      return task.taskName != taskToDelete
+    }));
+  };
 
   return (
     <div>
@@ -32,7 +39,7 @@ const ToDoList = () :JSX.Element => {
       <button onClick={addTask}>Add task</button>
       <div>
         {toDoList.map((task, index) => {
-           return <Task key={`task-${index}`} task={task}/>
+           return <Task key={`task-${index}`} task={task} completeTask={completeTask}/>
         })}
       </div>
     </div>

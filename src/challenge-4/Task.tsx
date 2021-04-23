@@ -4,12 +4,14 @@ import { TaskInterface } from "./TodoList";
 // Va prendre les mêmes props que notre interface
 interface TaskProps  {
   task: TaskInterface;
+  completeTask(taskToDelete: string):void; // On récupère la fonction qui est dans toDoList
 }
 
-const Task = ({ task }:TaskProps) :JSX.Element => {
+const Task = ({ task, completeTask }:TaskProps) :JSX.Element => {
   return (
     <div>
       {task.taskName}
+      <button onClick={()=>{ completeTask(task.taskName)}}>X</button>
     </div>
   )
 }
