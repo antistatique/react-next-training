@@ -1,22 +1,64 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 
-const Form = (): JSX.Element => {
+type Inputs = {
+  example: string,
+  exampleRequired: string,
+};
 
-  const { register, handleSubmit } = useForm();
-  const onSubmit = data => console.log(data);
-   
+const Form = (): JSX.Element => {
+  const { register, formState: { errors }, handleSubmit } = useForm();
+  const onSubmit = (data: any) => alert(JSON.stringify(data));
+
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <input {...register("firstName")} />
-      <select {...register("gender")}>
-        <option value="female">female</option>
-        <option value="male">male</option>
-        <option value="other">other</option>
-      </select>
+    <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col space-y-10">
+
+      <div className="flex flex-col">
+        <label htmlFor="firstName">First name</label>
+        <input 
+          id="firstName" 
+          {...register("firstName", { required: true, pattern: /^[A-Za-z]+$/i }) } 
+          placeholder="First name"
+          className="border" 
+        />
+        {errors.firstName && "First name is required"}
+      </div>
+
+      <div className="flex flex-col">
+        <label htmlFor="lastName">First name</label>
+        <input 
+          id="lastName" 
+          {...register("lastName", { required: true, pattern: /^[A-Za-z]+$/i }) } 
+          placeholder="Last name"
+          className="border" 
+        />
+        {errors.lastName && "Last name is required"}
+      </div>
+
+      <div className="flex flex-col">
+        <label htmlFor="email">First name</label>
+        <input 
+          id="email" 
+          type="email" {...register("email", {required: true} )} 
+          placeholder="Email" 
+          className="border"
+        />
+        {errors.email && "Email is required"}
+      </div>
+
+      <div className="flex flex-col">
+        <textarea 
+          {...register("message", { required: true, maxLength: 30 })} 
+          placeholder="Message"
+          className="border"
+        />
+        {errors.message && "Message is required"}
+      </div>
+
       <input type="submit" />
     </form>
   );
+
 }
 
 export default Form;
