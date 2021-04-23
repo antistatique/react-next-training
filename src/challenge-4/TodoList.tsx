@@ -1,6 +1,7 @@
 import React, { ChangeEvent, useContext, useEffect, useState } from "react";
+import Task from "./Task";
 
-interface TaskInterface {
+export interface TaskInterface {
   taskName: string
 }
 
@@ -19,14 +20,21 @@ const ToDoList = () :JSX.Element => {
   // Va ajouter au tableau une nouvelle tâche
   const addTask = () => {
     const newTask = { taskName: task }
-    setToDoList([...toDoList, newTask])
+    setToDoList([...toDoList, newTask]);
+    //Clear l'input après avoir appuyer sur le bouton
+    setTask('');
     console.log(toDoList)
   }
 
   return (
     <div>
-      <input type="text" placeholder="write a task" onChange={handleChange}/>
+      <input type="text" placeholder="write a task" value={task} onChange={handleChange}/>
       <button onClick={addTask}>Add task</button>
+      <div>
+        {toDoList.map((task, index) => {
+           return <Task key={`task-${index}`} task={task}/>
+        })}
+      </div>
     </div>
   );
 }
