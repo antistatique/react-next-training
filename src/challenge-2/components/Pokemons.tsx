@@ -24,9 +24,9 @@ const Pokemons = (): JSX.Element => {
 
   const handleRefreshPokemons = (newUrl: string | null ) => {
     if (newUrl !== null){ 
-    fetch(newUrl)
-      .then((response) => response.json())
-      .then(setAllPokemons);
+      fetch(newUrl)
+        .then((response) => response.json())
+        .then(setAllPokemons);
     }
   };
 
