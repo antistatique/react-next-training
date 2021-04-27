@@ -22,12 +22,11 @@ const Pokemons = (): JSX.Element => {
       .then(setAllPokemons);
   }, []);
 
-  const handleRefreshPokemons = (newUrl: string | null) => {
-    
+  const handleRefreshPokemons = (newUrl: string | null ) => {
     if (newUrl !== null){ 
       fetch(newUrl)
-      .then((response) => response.json())
-      .then(setAllPokemons);
+        .then((response) => response.json())
+        .then(setAllPokemons);
     }
   };
 
