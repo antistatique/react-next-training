@@ -22,10 +22,12 @@ const Pokemons = (): JSX.Element => {
       .then(setAllPokemons);
   }, []);
 
-  const handleRefreshPokemons = (newUrl) => {
-    fetch(newUrl)
-      .then((response) => response.json())
-      .then(setAllPokemons);
+  const handleRefreshPokemons = (newUrl: string | null ) => {
+    if (newUrl !== null){ 
+      fetch(newUrl)
+        .then((response) => response.json())
+        .then(setAllPokemons);
+    }
   };
 
   // utilisation du context qui passe va prendre les "props" déclarée plus haut
