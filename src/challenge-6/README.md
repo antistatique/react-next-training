@@ -12,6 +12,7 @@ Toujours dans ce repository, mais à partir d'une branche *orphan*, configurer u
 2. Y ajouter la [configuration frontend d'Antistatique](https://github.com/antistatique/frontend-development-configuration) (pas le projet Next.js)
 3. Y ajouter [twin.macro](https://github.com/ben-rogerson/twin.macro) en suivant les instructions “twin next emotion”
 4. Faire une simple page qui démontre que le projet et les styles Tailwind fonctionnent.
+5. Faire un README complet
 
 
 ## 🗜️ Contraintes
