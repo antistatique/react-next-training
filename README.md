@@ -6,6 +6,7 @@
 - [Challenge #3 - Formulaire](src/challenge-3/README.md)
 - [Challenge #4 - Node Animation](src/challenge-4/README.md)
 - [Challenge #5 - Custom Hooks](src/challenge-5/README.md)
+- [Challenge #6 - Next.js setup](src/challenge-6/README.md)
 
 ## Install and run
 
