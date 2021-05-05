@@ -41,28 +41,20 @@ const usePokemons = (url:string) => {
     dispatchPokemons({type: "loading"})
 
     fetch(url)
-      .then((response) => {
-        if (!response == 200 ) {
-          dispatchPokemons({ type: 'error' }) ;
-        }
-        return response.json();
-      }).then( (response) => {
-        dispatchPokemons({ type: 'success' });
-      }).catch((error) => {
-        dispatchPokemons({ type: 'error' }) ; 
-      });
+    .then( (response) => {
+      dispatchPokemons({ type: 'success' });
+      return response.json();
+    }).catch((error) => {
+      dispatchPokemons({ type: 'error' }) ; 
+    });
   }, []);
 
   const handleRefreshPokemons = (newUrl: string | null) => {
     if (newUrl !== null) {
       fetch(newUrl)
-        .then((response) => {
-          if (!response == 200 ) {
-            dispatchPokemons({ type: 'error' }) ;
-          }
-          return response.json();
-        }).then( (response) => {
+        .then( (response) => {
           dispatchPokemons({ type: 'success' });
+          return response.json();
         }).catch((error) => {
           dispatchPokemons({ type: 'error' }) ; 
         });
