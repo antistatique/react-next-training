@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import usePokemons,  { PokemonsResponse } from '../hook/usePokemons';
+import usePokemons, { PokemonsResponse } from '../hook/usePokemons';
 
 export type PokemonsProps = {
   setFavorite: (name: string) => void;
@@ -9,13 +9,15 @@ export type PokemonsProps = {
 const url = 'https://pokeapi.co/api/v2/pokemon/';
 
 const Pokemons = ({ setFavorite, favorite }: PokemonsProps): JSX.Element => {
-  const { allPokemons, handleRefreshPokemons } = usePokemons(url)
+  const { allPokemons, handleRefreshPokemons } = usePokemons(url);
 
   if (allPokemons === null) return <p>No pokemons</p>;
 
   // Affichage de la liste avec une boucle
   return (
     <div>
+      {allPokemons.loading && <div>Loading...</div>}
+      {allPokemons.loading && <div>Loading...</div>}
       <div className="flex justify-end text-white mb-8">
         {allPokemons.previous !== null && (
           <button
