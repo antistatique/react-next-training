@@ -10,6 +10,7 @@ type FormData = {
 };
 
 const Form = (): JSX.Element => {
+
   const { register, formState: { errors }, handleSubmit } = useForm();
   
   const onSubmit: SubmitHandler<FormData> = data => console.log(data);
