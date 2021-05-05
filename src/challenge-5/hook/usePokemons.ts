@@ -14,9 +14,15 @@ export type PokemonsResponse = {
 const initialState = {
   loading: false,
   error: false,
+  previous: "",
+  next: "",
+  results: [{
+    name: "",
+    url: "",
+  }]
 };
 
-const reducer = (state = initialState, action) => {
+const reducer = (state = initialState, action: { type: any; }) => {
   switch (action.type) {
     case 'loading': {
       return { ...state, loading: true };
