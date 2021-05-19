@@ -10,17 +10,16 @@
 
 En reprenant le code du Challenge #1, créer un hook `usePokemons` qui externalise toute la logique du composant `Pokemons.tsx`. Remplacer `useState` par `useReducer` afin de fournir un état `loading` et `error`, ainsi que de pouvoir stocker les différentes pages séparément. Fournir une API intuitive et agréable à l'usage.
 
-
 ## 🗜️ Contraintes
 
 - N'utiliser que React et react-dom
-- Toutes les *props* sont correctement typées
+- Toutes les _props_ sont correctement typées
 - Respecter les bonnes pratiques d'accessibilité et d'expérience utilisateur
 - Respecter les bonnes pratiques JavaScript/TypeScript sans linter
 
 ## 🚀 Livrable
 
-- *Pull request* vers `main`
+- _Pull request_ vers `main`
 
 ## 📚 Resources
 
@@ -29,5 +28,3 @@ En reprenant le code du Challenge #1, créer un hook `usePokemons` qui externali
 - [🥚 Shareable Custom Hooks in React](https://egghead.io/courses/shareable-custom-hooks-in-react)
 - [🕶 Awesome Frontend](https://github.com/orgs/antistatique/teams/frontend/discussions/2)
 - [TypeScript Cheat Sheet](https://typescript-cheatsheet.vercel.app/)
-
-
