@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "autoprefixer": "^9",
+    "cypress": "^7.3.0",
     "eslint-plugin-react": "^7.23.2",
     "next": "10.2.2",
     "postcss": "^7",

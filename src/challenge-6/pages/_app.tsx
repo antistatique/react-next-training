@@ -1,4 +1,3 @@
-import '../styles/globals.css'
 import type { AppProps } from 'next/app'
 import '../styles/base.css'
 import '../styles/tailwind.css'
