@@ -3,7 +3,7 @@ import tw, { css } from 'twin.macro';
 
 const Home = (): JSX.Element => (
   <div>
-    <h1 tw="text-blue-900 text-8xl">Mon super titre</h1>
+    <h1 tw="text-blue-900 text-xl">Home Page</h1>
   </div>
 );
 
