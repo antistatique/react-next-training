@@ -24,6 +24,8 @@
     "@emotion/react": "^11.4.0",
     "@emotion/server": "^11.4.0",
     "@emotion/styled": "^11.3.0",
+    "@headlessui/react": "^1.2.0",
+    "@heroicons/react": "^1.0.1",
     "autoprefixer": "^9",
     "cypress": "^7.3.0",
     "eslint-plugin-react": "^7.23.2",
