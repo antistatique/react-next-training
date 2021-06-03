@@ -7,8 +7,10 @@ import Header from 'components/header';
 const App = ({ Component, pageProps }: AppProps): JSX.Element => (
   <>
     <GlobalStyles />
-    <Header />
-    <Component {...pageProps} />
+    <main>
+      <Header />
+      <Component {...pageProps} />
+    </main>
   </>
 );
 
